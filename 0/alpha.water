@@ -1,0 +1,81 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    arch        "LSB;label=32;scalar=64";
+    class       volScalarField;
+    location    "0";
+    object      alpha.water;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    "back|backOverset"
+    {
+        type            empty;
+    }
+    Overset
+    {
+        type            overset;
+    }
+    "workpiece|workpieceOverset"
+    {
+        type            zeroGradient;
+    }
+    "tool|toolOverset"
+    {
+        type            zeroGradient;
+    }
+    "wall|wallOverset"
+    {
+        type            zeroGradient;
+    }
+    inletOverset
+    {
+        type              groovyBC;
+        variables         "r=1.25/2;x1=(-0.65+r);x2=(-0.65-r);z=(0);y=(2.52531);pOne=1.e-3*vector(x1,y,z);pTwo=1.e-3*vector(x2,y,z);pMid=0.5*(pOne+pTwo);ww=1.0-mag(pos()-pMid)/mag(pOne-pTwo)/0.5;";
+        valueExpression   "ww > 0.0 ? 1.0 : 0.0";
+        value             uniform 1;
+    }
+    "outlet|outletOverset"
+    {
+        type            zeroGradient;
+    }
+    "front|frontOverset"
+    {
+        type            zeroGradient;
+    }
+    "outlet_ext*"
+    {
+        type            zeroGradient;
+        inletValue      uniform 0;
+        value           uniform 0;
+    }
+    "outlet_wall*|outlet_empty*"
+    {
+        type            slip;
+    } 
+    inlet
+    {
+        type            zeroGradient;
+    }
+    "outletOverset_side_1|outletOverset_side_2|outletOverset_side_3|outletOverset_side_4|outletOverset_side_5|outletOverset_side_6|outletOverset_side_7|outletOverset_side_8"
+    {
+        type            overset;
+    }
+}
+
+
+// ************************************************************************* //

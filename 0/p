@@ -1,0 +1,80 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+
+    "inletOverset|inlet"
+    {
+        type            zeroGradient;
+        value			uniform 0;
+    }
+
+    "outlet_ext*"
+    {
+        type            fixedValue;
+        value           uniform 0;
+    }
+    "outlet_wall*|outlet_empty*"
+    {
+        type            slip;
+    }    
+    "workpiece|workpieceOverset"
+    {
+        type            zeroGradient;
+        value			uniform 0;
+    }
+	
+   "wall|wallOverset"
+   {
+       type             zeroGradient;
+       value			uniform 0;
+   }
+	
+	"outlet|outletOverset"
+    {
+        type            zeroGradient;
+        value			uniform 0;
+    }
+	
+    "tool|toolOverset"
+    {
+        type            zeroGradient;
+        value			uniform 0;
+    }
+	
+    "front|frontOverset"
+    {
+        type            zeroGradient;
+        value           uniform 0;
+    }
+	
+    "back|backOverset"
+    {
+        type            empty;
+    }
+    "Overset|outletOverset_side_1|outletOverset_side_2|outletOverset_side_3|outletOverset_side_4|outletOverset_side_5|outletOverset_side_6|outletOverset_side_7|outletOverset_side_8"
+    {
+        type            overset;
+    }
+}
+
+
+// ************************************************************************* //

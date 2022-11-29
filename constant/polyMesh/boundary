@@ -1,0 +1,181 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2206                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    arch        "LSB;label=32;scalar=64";
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+26
+(
+    back
+    {
+        type            empty;
+        nFaces          21614;
+        startFace       1234776;
+    }
+    wall
+    {
+        type            wall;
+        nFaces          1066;
+        startFace       1256390;
+    }
+    inlet
+    {
+        type            wall;
+        nFaces          78;
+        startFace       1257456;
+    }
+    outlet
+    {
+        type            wall;
+        nFaces          169;
+        startFace       1257534;
+    }
+    workpiece
+    {
+        type            wall;
+        nFaces          1449;
+        startFace       1257703;
+    }
+    tool
+    {
+        type            wall;
+        nFaces          234;
+        startFace       1259152;
+    }
+    front
+    {
+        type            wall;
+        nFaces          21614;
+        startFace       1259386;
+    }
+    outlet_empty
+    {
+        type            slip;
+        nFaces          3111;
+        startFace       1281000;
+    }
+    outlet_wall
+    {
+        type            slip;
+        nFaces          2023;
+        startFace       1284111;
+    }
+    outlet_ext
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          952;
+        startFace       1286134;
+    }
+    backOverset
+    {
+        type            empty;
+        nFaces          1316;
+        startFace       1287086;
+    }
+    Overset
+    {
+        type            overset;
+        nFaces          3801;
+        startFace       1288402;
+    }
+    workpieceOverset
+    {
+        type            wall;
+        nFaces          1596;
+        startFace       1292203;
+    }
+    toolOverset
+    {
+        type            wall;
+        nFaces          234;
+        startFace       1293799;
+    }
+    wallOverset
+    {
+        type            wall;
+        nFaces          1066;
+        startFace       1294033;
+    }
+    inletOverset
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          78;
+        startFace       1295099;
+    }
+    outletOverset
+    {
+        type            wall;
+        nFaces          169;
+        startFace       1295177;
+    }
+    frontOverset
+    {
+        type            wall;
+        nFaces          1316;
+        startFace       1295346;
+    }
+    outletOverset_side_1
+    {
+        type            overset;
+        nFaces          96;
+        startFace       1296662;
+    }
+    outletOverset_side_2
+    {
+        type            overset;
+        nFaces          48;
+        startFace       1296758;
+    }
+    outletOverset_side_3
+    {
+        type            overset;
+        nFaces          64;
+        startFace       1296806;
+    }
+    outletOverset_side_4
+    {
+        type            overset;
+        nFaces          216;
+        startFace       1296870;
+    }
+    outletOverset_side_5
+    {
+        type            overset;
+        nFaces          48;
+        startFace       1297086;
+    }
+    outletOverset_side_6
+    {
+        type            overset;
+        nFaces          104;
+        startFace       1297134;
+    }
+    outletOverset_side_7
+    {
+        type            overset;
+        nFaces          272;
+        startFace       1297238;
+    }
+    outletOverset_side_8
+    {
+        type            overset;
+        nFaces          104;
+        startFace       1297510;
+    }
+)
+
+// ************************************************************************* //
