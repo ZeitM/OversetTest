@@ -1,1 +1,1 @@
-Test case for overset Mesh
+Test case for overset Mesh in OpenFoam
